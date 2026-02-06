@@ -1,0 +1,20 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A" />
+      <stop offset="1" stop-color="#1D4ED8" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="1000" cy="120" r="120" fill="#38BDF8" fill-opacity="0.2" />
+  <circle cx="200" cy="520" r="180" fill="#22D3EE" fill-opacity="0.2" />
+  <text x="96" y="250" fill="#FFFFFF" font-size="64" font-family="Arial, Helvetica, sans-serif" font-weight="700">
+    Dr. Diellza Rabushaj
+  </text>
+  <text x="96" y="340" fill="#E2E8F0" font-size="44" font-family="Arial, Helvetica, sans-serif" font-weight="500">
+    Telemedicine
+  </text>
+  <text x="96" y="420" fill="#CBD5F5" font-size="32" font-family="Arial, Helvetica, sans-serif">
+    shërbime telemedicine, konsultë online.
+  </text>
+</svg>

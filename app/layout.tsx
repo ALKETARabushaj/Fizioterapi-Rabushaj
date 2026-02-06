@@ -18,19 +18,20 @@ const space_grotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 })
 
+const metadataTitle = 'Dr. Diellza Rabushaj – Telemedicine'
+const metadataDescription = 'shërbime telemedicine, konsultë online.'
+const openGraphImage = '/og-telemedicine.svg'
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
-  title: {
-    default: siteMetadata.title,
-    template: `%s | ${siteMetadata.title}`,
-  },
-  description: siteMetadata.description,
+  title: metadataTitle,
+  description: metadataDescription,
   openGraph: {
-    title: siteMetadata.title,
-    description: siteMetadata.description,
+    title: metadataTitle,
+    description: metadataDescription,
     url: './',
-    siteName: siteMetadata.title,
-    images: [siteMetadata.socialBanner],
+    siteName: metadataTitle,
+    images: [openGraphImage],
     locale: 'en_US',
     type: 'website',
   },
@@ -52,9 +53,10 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: siteMetadata.title,
+    title: metadataTitle,
+    description: metadataDescription,
     card: 'summary_large_image',
-    images: [siteMetadata.socialBanner],
+    images: [openGraphImage],
   },
 }
 
