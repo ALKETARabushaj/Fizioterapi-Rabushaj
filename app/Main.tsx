@@ -1,91 +1,57 @@
-import Link from '@/components/Link'
-import Tag from '@/components/Tag'
-import siteMetadata from '@/data/siteMetadata'
-import { formatDate } from 'pliny/utils/formatDate'
-import NewsletterForm from 'pliny/ui/NewsletterForm'
-
-const MAX_DISPLAY = 5
-
-export default function Home({ posts }) {
+export default function Home() {
   return (
-    <>
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <h1 className="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 dark:text-gray-100">
-            Latest
-          </h1>
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {siteMetadata.description}
+    <section className="mx-auto max-w-4xl space-y-10 py-10">
+      <div className="space-y-4 text-center">
+        <p className="bg-primary-100 text-primary-700 dark:bg-primary-900/40 dark:text-primary-300 inline-block rounded-full px-4 py-1 text-sm font-semibold">
+          HAXHIMAKLLA ONLINE
+        </p>
+        <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl dark:text-gray-100">
+          Porosit Haxhimaklla shpejt dhe lehtë
+        </h1>
+        <p className="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-300">
+          Vetëm haxhimaklla — pa produkte tjera. Kjo faqe është ndërtuar për ta marrë porosinë
+          online dhe për ta bërë shitjen më të thjeshtë për klientët tuaj.
+        </p>
+      </div>
+
+      <div className="grid gap-6 rounded-2xl border border-gray-200 bg-white p-8 shadow-sm md:grid-cols-2 dark:border-gray-700 dark:bg-gray-900">
+        <div className="space-y-3">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+            Çmimi i rekomanduar
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300">
+            Për fitim të mirë dhe konkurrencë të shëndetshme, cakto çmimin:
+          </p>
+          <p className="text-primary-600 dark:text-primary-400 text-4xl font-extrabold">
+            39€ / copë
+          </p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            Ky është çmim i balancuar për shitje online dhe i kuptueshëm për klientin.
           </p>
         </div>
-        <ul className="divide-y divide-gray-200 dark:divide-gray-700">
-          {!posts.length && 'No posts found.'}
-          {posts.slice(0, MAX_DISPLAY).map((post) => {
-            const { slug, date, title, summary, tags } = post
-            return (
-              <li key={slug} className="py-12">
-                <article>
-                  <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                    <dl>
-                      <dt className="sr-only">Published on</dt>
-                      <dd className="text-base leading-6 font-medium text-gray-500 dark:text-gray-400">
-                        <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
-                      </dd>
-                    </dl>
-                    <div className="space-y-5 xl:col-span-3">
-                      <div className="space-y-6">
-                        <div>
-                          <h2 className="text-2xl leading-8 font-bold tracking-tight">
-                            <Link
-                              href={`/blog/${slug}`}
-                              className="text-gray-900 dark:text-gray-100"
-                            >
-                              {title}
-                            </Link>
-                          </h2>
-                          <div className="flex flex-wrap">
-                            {tags.map((tag) => (
-                              <Tag key={tag} text={tag} />
-                            ))}
-                          </div>
-                        </div>
-                        <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                          {summary}
-                        </div>
-                      </div>
-                      <div className="text-base leading-6 font-medium">
-                        <Link
-                          href={`/blog/${slug}`}
-                          className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                          aria-label={`Read more: "${title}"`}
-                        >
-                          Read more &rarr;
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </li>
-            )
-          })}
-        </ul>
+
+        <div className="space-y-3">
+          <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+            Çfarë përfshin oferta
+          </h3>
+          <ul className="list-disc space-y-2 pl-5 text-gray-600 dark:text-gray-300">
+            <li>1x Haxhimaklla premium</li>
+            <li>Dërgesë e shpejtë në Kosovë</li>
+            <li>Porosi direkte nga telefoni</li>
+            <li>Vetëm produkti Haxhimaklla, asgjë tjetër</li>
+          </ul>
+        </div>
       </div>
-      {posts.length > MAX_DISPLAY && (
-        <div className="flex justify-end text-base leading-6 font-medium">
-          <Link
-            href="/blog"
-            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-            aria-label="All posts"
-          >
-            All Posts &rarr;
-          </Link>
-        </div>
-      )}
-      {siteMetadata.newsletter?.provider && (
-        <div className="flex items-center justify-center pt-4">
-          <NewsletterForm />
-        </div>
-      )}
-    </>
+
+      <div className="bg-primary-600 rounded-2xl p-8 text-center text-white">
+        <h3 className="text-2xl font-bold">Prano porosi online sot</h3>
+        <p className="text-primary-100 mt-2">
+          Aktivizo faqen dhe fillo me çmimin 39€ për të testuar tregun e për të rritur fitimin.
+        </p>
+        <button className="text-primary-700 hover:bg-primary-50 mt-5 rounded-xl bg-white px-6 py-3 font-semibold transition">
+          Porosit Tani
+        </button>
+      </div>
+    </section>
   )
 }
